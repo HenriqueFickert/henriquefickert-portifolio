@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #c8c8c8 #fff;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        padding: 5px;
+        background: var(--white), transparent;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--gray);
+        border-radius: 2px;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+app-footer {
+    margin-top: auto;
+}
+
+.highlighted-word {
+    font-family: "SegoeSemiBold";
+    font-weight: 100;
+}

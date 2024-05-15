@@ -1,0 +1,17 @@
+@import './colors';
+@import './custom-variables';
+@import './_font';
+
+.showmobile {
+    display: none !important;
+
+    @media #{$mobile} {
+        display: block !important;
+    }
+}
+
+.hidemobile {
+    @media #{$mobile} {
+        display: none !important;
+    }
+}
