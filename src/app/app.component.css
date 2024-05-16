@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+}
+
+.container-opened {
+    height: calc(100vh - 80px);
+    display: flex;
+}
+
+.sidenav {
+    width: 100%;
+    background-color: var(--dark-area);
+}
+
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
