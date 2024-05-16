@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "henriquefickert-portifolio": {
+      "i18n": {
+        "sourceLocale": "pt-BR",
+        "locales": {
+          "en-US": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
             "outputPath": "dist/henriquefickert-portifolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -32,6 +39,9 @@
           },
           "configurations": {
             "production": {
+              "localize": [
+                "en-US"
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -50,6 +60,18 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "pt-BR": {
+              "localize": [
+                "pt-BR"
+              ],
+              "i18nMissingTranslation": "error"
+            },
+            "en-US": {
+              "localize": [
+                "en-US"
+              ],
+              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": "production"
@@ -57,6 +79,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "en": {
+              "buildTarget": "henriquefickert-portifolio:build:en-US"
+            },
+            "pt": {
+              "buildTarget": "henriquefickert-portifolio:build:pt-BR"
+            },
             "production": {
               "buildTarget": "henriquefickert-portifolio:build:production"
             },
